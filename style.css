@@ -124,3 +124,79 @@ ul.flip li a div.up div.inn {
 ul.flip li a div.down div.inn {
     bottom: 0;
 }
+
+body.play ul li.before {
+    z-index: 3;
+}
+body.play ul li.active {
+    animation: assdd .5s .5s linear both;
+    z-index: 2;
+}
+
+@keyframes assdd {
+    0% {
+        z-index: 3;
+    }
+    5% {
+        z-index: 4;
+    }
+    100% {
+        z-index: 4;
+    }
+}
+
+body.play ul li.active .down{
+    z-index: 2;
+    animation: turn .5s .5s linear both;
+}
+
+@keyframes turn {
+    0% {
+        transform: rotateX(90deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+body.play ul li.before .up {
+    z-index: 2;
+    animation: turn2 .5s .5s linear both;
+}
+
+@keyframes turn2 {
+    0% {
+        transform: rotateX(0deg);
+    }
+    100% {
+        transform: rotateX(-90deg);
+    }
+}
+
+body.play ul li.before .up .shadow {
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 1) 100%);
+    animation: show .5s linear both;
+}
+
+body.play ul li.active .up .shadow {
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 1) 100%);
+    animation: hide .5s linear both;
+}
+
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes hide {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
